@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('posts.store') }}" method="POST">
-        @csrf
+    <form method="POST" action="{{ route('posts.update', ['id' => $post->id]) }}">
+        @csrf 
+        @method('PATCH')
         @include('posts.form')
     </form>
 @endsection
+
 @section('script')
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script type="text/javascript">

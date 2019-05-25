@@ -34,7 +34,7 @@ class PostsPolicy
      * @param  \App\Post  $post
      * @return mixed
      */
-    public function update(User $user, Post $post)
+    public function update(User $user)
     {
         return  $this->CheckIfAdmin($user);
     }
@@ -46,7 +46,7 @@ class PostsPolicy
      * @param  \App\Post  $post
      * @return mixed
      */
-    public function delete(User $user, Post $post)
+    public function delete(User $user)
     {
         return $this->CheckIfAdmin($user);
     }

@@ -13,7 +13,19 @@
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a class="btn btn-sm btn-outline-secondary" href="{{ route('posts.show', ['id' => $post->id ]) }}">View</a>
-                            <a class="btn btn-sm btn-outline-secondary" href="{{ route('posts.edit', ['id' => $post->id ]) }}">Edit</a>
+                            @can('update', App\Post::class)
+                                <a class="btn btn-sm btn-outline-secondary" href="{{ route('posts.edit', ['id' => $post->id ]) }}">Edit</a>
+                            @endcan
+                            @can('delete', App\Post::class)
+                                <a class="btn btn-sm btn-danger" href="{{ route('posts.destroy', ['id' => $post->id ]) }}"
+                                    onclick="event.preventDefault(); document.getElementById('delete-form-{{ $post->id }}').submit();">
+                                    {{ __('Delete') }}
+                                </a>
+                                <form id="delete-form-{{ $post->id }}" action="{{ route('posts.destroy', ['id' => $post->id ]) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            @endcan
                         </div>
                         <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
                         </div>
