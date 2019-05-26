@@ -29,8 +29,8 @@ deb http://archive.ubuntu.com/ubuntu bionic main multiverse restricted universe
 deb http://archive.ubuntu.com/ubuntu bionic-security main multiverse restricted universe
 deb http://archive.ubuntu.com/ubuntu bionic-updates main multiverse restricted universe
 ```
-+`sudo apt install php7.2 php7.2-fpm php7.2-cgi php7.2-mysql php7.2-mbstring php7.2-xml php7.2 composer unzip` To install PHP
-+`sudo nano /etc/nginx/sites-available/YOUR.DOMAIN.COM` and add the following
++ `sudo apt install php7.2 php7.2-fpm php7.2-cgi php7.2-mysql php7.2-mbstring php7.2-xml php7.2 composer unzip` To install PHP
++ `sudo nano /etc/nginx/sites-available/YOUR.DOMAIN.COM` and add the following
 ```
 server {
     listen 80;
