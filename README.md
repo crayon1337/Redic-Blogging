@@ -71,7 +71,7 @@ server {
 + `sudo nginx -t` test the whole config
 + `sudo systemctl reload nginx` to apply all changes
 
-## Laravel Installation
+# Laravel Installation
 + `mysql -u root -p` Login to create the database
 + `CREATE DATABASE redic;`
 + `cd /var/www/html/`
@@ -89,7 +89,7 @@ server {
 
 If you would like to deploy the application for production use you have to edit the APP_ENV in .env to be ``APP_ENV=production`` & ``APP_DEBUG=false``
 
-## Create an Admin user
+# Create an Admin user
 First you have to register a user using /login URL.
 To add a post/category and modify users role you need to be an admin. Lets login to mysql
 + `mysql -u root -p` & enter root pw
@@ -97,11 +97,11 @@ To add a post/category and modify users role you need to be an admin. Lets login
 + `UPDATE users SET isAdmin = 1 WHERE email = 'YOUR EMAIL';`
 
 
-## Useful linux softwares
+# Useful linux softwares
 + `apt install htop` I really like to use this piece of software to monitor the server resources.
 
-## Public Trello Board
+# Public Trello Board
 I have used this ['board'](https://trello.com/b/S5arAs6y) during the development of this blogging system to organize and priotrize the Todos.
 
-## Conclusion
+# Conclusion
 So this is it. Now you should have a simple blogging system working completely fine. If you need any help building the project contact me =)
