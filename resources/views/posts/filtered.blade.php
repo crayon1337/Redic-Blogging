@@ -5,6 +5,7 @@
 @foreach($categories as $category)
     <a href="{{ route('showPostsbyCategory', ['id' => $category->id]) }}" class="btn btn-sm btn-primary mb-2">{{ $category->name }}</a>
 @endforeach
+
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row">

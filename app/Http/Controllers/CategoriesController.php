@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Post;
 
 class CategoriesController extends Controller
 {
+
+    public function getPostsbyCategory($id)
+    {
+        $posts = Post::where('category_id', $id)->orderBy('created_at', 'desc')->get();
+
+        //Select all categories from the database so we can assign them from the view.
+        $categories = Category::all('id', 'name');
+
+        return view('posts.filtered', compact('posts', 'categories'));
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -77,6 +77,11 @@
                         @endauth
                         @can('create', App\Post::class)
                             <li class="nav-item">
+                                <a href="{{ route('users.index') }}" class="nav-link">Users</a>
+                            </li>
+                        @endcan
+                        @can('create', App\Post::class)
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('posts.create') }}">
                                     {{ __('Add Post') }}
                                 </a>

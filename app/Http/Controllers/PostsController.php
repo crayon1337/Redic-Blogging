@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Comment;
 
 class PostsController extends Controller
 {
@@ -68,12 +69,15 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
 
         //Get related posts by category
-        $relatedPosts = Post::where('category_id', $post->category_id)
+        $relatedPosts = Post::with('getCategory')
+                            ->where('category_id', $post->category_id)
                             ->where('id', '!=', $post->id)
                             ->orderBy('created_at', 'desc')
                             ->get();
 
-        return view('posts.show', compact('post', 'relatedPosts'));
+        $comments = Comment::where('post_id', $post->id)->orderBy('created_at', 'desc')->get();
+
+        return view('posts.show', compact('post', 'relatedPosts', 'comments'));
     }
 
     /**

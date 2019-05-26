@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,10 @@ class HomeController extends Controller
         //Fetch all posts from DB using Eloquent.
         $posts = Post::orderBy('created_at', 'desc')->get();
 
-        return view('index', compact('posts'));
+        //Fetch all categories from DB so users can filter using categories
+
+        $categories = Category::all('id', 'name');
+
+        return view('index', compact('posts', 'categories'));
     }
 }
