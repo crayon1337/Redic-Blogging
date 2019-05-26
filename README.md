@@ -2,12 +2,12 @@
 Simple Blogging System.
 
 # What did I use in this project?
-• Laravel 5.8
-• PHP 7.2
-• MariaDB 
-• Bootstrap 4
-• TinyMCE (Rich text editor)
-• Laravel Debugbar Package (Extermely helpful in debugging & tracking the application behind the scenes)
++ Laravel 5.8
++ PHP 7.2
++ MariaDB 
++ Bootstrap 4
++ TinyMCE (Rich text editor)
++ Laravel Debugbar Package (Extermely helpful in debugging & tracking the application behind the scenes)
 
 # How to install?
 I will be using Nginx, MariaDB & PHP 7.2 on Ubuntu machine.
