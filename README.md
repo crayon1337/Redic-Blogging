@@ -100,5 +100,8 @@ To add a post/category and modify users role you need to be an admin. Lets login
 ## Useful linux softwares
 + `apt install htop` I really like to use this piece of software to monitor the server resources.
 
+## Public Trello Board
+I have used this ['board'](https://trello.com/b/S5arAs6y) during the development of this blogging system to organize and priotrize the Todos.
+
 ## Conclusion
 So this is it. Now you should have a simple blogging system working completely fine. If you need any help building the project contact me =)
